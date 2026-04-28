@@ -7,17 +7,18 @@
 
 // Exercício 1 — objetoParaJSON
 export function objetoParaJSON(objeto) {
-  // escreva seu código aqui
+  return JSON.stringify(objeto);
 }
 
 // Exercício 2 — jsonParaObjeto
 export function jsonParaObjeto(texto) {
-  // escreva seu código aqui
+  return JSON.parse(texto);
 }
 
 // Exercício 3 — clonarObjeto
 export function clonarObjeto(objeto) {
-  // escreva seu código aqui
+  const clone = JSON.stringify(objeto);
+  return JSON.parse(clone);
 }
 
 // ──────────────────────────────────────────────────
@@ -34,10 +35,15 @@ function simularConsulta(id) {
 
 // Exercício 4 — buscarDados
 export async function buscarDados(id) {
-  // escreva seu código aqui
+  id = await simularConsulta(id);
+  return id;
 }
 
 // Exercício 5 — dividirSeguro
 export async function dividirSeguro(a, b) {
-  // escreva seu código aqui
+  if (b === 0){
+    throw new Error('Divisão por zero')
+    
+  }
+  return a / b;
 }
